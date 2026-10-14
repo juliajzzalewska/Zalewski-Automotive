@@ -511,15 +511,20 @@
 
     <div class="reveal reveal-delay-1">
       <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
-        <div class="form-group"><label>Imię</label><input type="text" placeholder="Twoje imię" required></div>
+        <!-- Klucz z web3forms.com - przychodzi mailem po wpisaniu adresu na ich stronie -->
+        <input type="hidden" name="access_key" value="WKLEJ_TUTAJ_KLUCZ_WEB3FORMS">
+        <input type="hidden" name="from_name" value="Strona Zalewski Automotive">
+        <input type="hidden" name="subject" value="Nowe zapytanie ze strony">
+        <input type="checkbox" name="botcheck" style="display:none">
+        <div class="form-group"><label>Imię</label><input type="text" name="Imię" placeholder="Twoje imię" required></div>
         <div class="form-row">
-          <div class="form-group"><label>Telefon</label><input type="tel" id="contactPhone" placeholder="+48 ..."></div>
-          <div class="form-group"><label>E-mail</label><input type="email" id="contactEmail" placeholder="adres@email.pl"></div>
+          <div class="form-group"><label>Telefon</label><input type="tel" id="contactPhone" name="Telefon" placeholder="+48 ..."></div>
+          <div class="form-group"><label>E-mail</label><input type="email" id="contactEmail" name="email" placeholder="adres@email.pl"></div>
         </div>
         <div class="form-contact-error" id="contactError">Podaj numer telefonu lub adres e-mail.</div>
         <div class="form-group">
           <label>Temat</label>
-          <select>
+          <select name="Temat">
             <option>Konkretny model - chcę porozmawiać</option>
             <option>Ogólne info o imporcie</option>
             <option>Szacunek kosztów</option>
@@ -528,7 +533,7 @@
         </div>
         <div class="form-group">
           <label>Budżet i preferencje (opcjonalnie)</label>
-          <textarea rows="4" placeholder="np. BMW X5 2020+, budżet ok. 80 000 PLN łącznie..."></textarea>
+          <textarea name="Budżet i preferencje" rows="4" placeholder="np. BMW X5 2020+, budżet ok. 80 000 PLN łącznie..."></textarea>
         </div>
         <button type="submit" class="form-submit">Wyślij zapytanie →</button>
         <div class="form-success" id="formSuccess">✓ Wiadomość wysłana! Odezwiemy się najszybciej jak to możliwe.</div>
@@ -631,7 +636,7 @@
   });
 
   // ── FORM ──
-  function submitForm(e) {
+  async function submitForm(e) {
     e.preventDefault();
     const phone   = document.getElementById('contactPhone').value.trim();
     const email   = document.getElementById('contactEmail').value.trim();
@@ -666,8 +671,24 @@
     errorEl.style.display = 'none';
     const successEl = document.getElementById('formSuccess');
     const btn = e.target.querySelector('.form-submit');
-    successEl.style.display = 'block';
     btn.disabled = true; btn.style.opacity = '0.5';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(e.target)
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message);
+    } catch (err) {
+      errorEl.textContent = 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na zalewski.automotive@gmail.com.';
+      errorEl.style.display = 'block';
+      btn.disabled = false; btn.style.opacity = '1';
+      return;
+    }
+
+    successEl.style.display = 'block';
     setTimeout(() => {
       successEl.style.display = 'none';
       btn.disabled = false; btn.style.opacity = '1';
