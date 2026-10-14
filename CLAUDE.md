@@ -47,5 +47,5 @@ ewentualnie później własna domena z OVH.
 - [ ] Przetestować potwierdzenie na prawdziwym formularzu
 - [ ] Stopka i szablony w Gmailu (z `email/gmail.html`)
 - [x] GitHub Pages włączone: https://juliajzzalewska.github.io/Zalewski-Automotive/
-- [ ] Po publikacji: w panelu Web3Forms zmienić Website URL z `localhost` na adres strony
+- [x] Web3Forms: Website URL zmieniony na adres GitHub Pages
 - [ ] (opcjonalnie) domena
