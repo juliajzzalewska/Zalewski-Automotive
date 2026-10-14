@@ -19,7 +19,8 @@ ewentualnie później własna domena z OVH.
 
 ## Stan prac / następne kroki
 
-- [ ] Wkleić prawdziwy klucz Web3Forms w miejsce `WKLEJ_TUTAJ_KLUCZ_WEB3FORMS`
+- [x] Klucz Web3Forms wklejony (konto web3forms na zalewski.automotive@gmail.com)
 - [ ] Przetestować formularz
 - [ ] Włączyć GitHub Pages
+- [ ] Po publikacji: w panelu Web3Forms zmienić Website URL z `localhost` na adres strony
 - [ ] (opcjonalnie) domena
