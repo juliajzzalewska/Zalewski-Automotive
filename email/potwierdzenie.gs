@@ -13,6 +13,7 @@
 var FIRMA = 'Zalewski Automotive';
 var TELEFON = '505 962 630';
 var MAIL = 'zalewski.automotive@gmail.com';
+var LIMIT_DZIENNY = 30;
 
 function doPost(e) {
   var p = (e && e.parameter) || {};
@@ -28,6 +29,14 @@ function doPost(e) {
   var klucz = 'wyslano:' + email.toLowerCase();
   if (cache.get(klucz)) return odpowiedz('za-czesto');
   cache.put(klucz, '1', 600);
+
+  // Łączny limit na dobę - adres skryptu jest publiczny, więc chroni Gmaila
+  // firmy przed masowym wysyłaniem, gdyby ktoś próbował go nadużyć
+  var dzien = 'licznik:' + Utilities.formatDate(new Date(), 'Europe/Warsaw', 'yyyy-MM-dd');
+  var props = PropertiesService.getScriptProperties();
+  var licznik = Number(props.getProperty(dzien) || 0);
+  if (licznik >= LIMIT_DZIENNY) return odpowiedz('limit');
+  props.setProperty(dzien, String(licznik + 1));
 
   var dane = {
     imie: String(p.Klient || '').trim(),

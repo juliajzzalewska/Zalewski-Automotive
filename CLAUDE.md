@@ -22,7 +22,7 @@ zalewski.automotive@gmail.com), wdrożony jako Aplikacja internetowa
 (wykonuj jako: ja, dostęp: każdy). Strona po sukcesie Web3Forms wysyła te same
 dane na adres skryptu (`CONFIRMATION_URL` w `index.html`), skrypt odsyła
 klientowi mail HTML w stylu strony z Gmaila firmy. Limit 1 mail na adres na
-10 min. Po zmianie pliku: wkleić ponownie i Wdróż → Zarządzaj wdrożeniami →
+10 min i max `LIMIT_DZIENNY` (30) maili na dobę - adres skryptu jest publiczny. Po zmianie pliku: wkleić ponownie i Wdróż → Zarządzaj wdrożeniami →
 edytuj → Nowa wersja (adres zostaje ten sam).
 
 ## Gmail - stopka i szablony
@@ -44,7 +44,8 @@ ewentualnie później własna domena z OVH.
 - [x] Klucz Web3Forms wklejony (konto web3forms na zalewski.automotive@gmail.com)
 - [x] Przetestować formularz (Web3Forms działa)
 - [x] `potwierdzenie.gs` wdrożony (projekt "Potwierdzenie formularza" na script.google.com), adres w `CONFIRMATION_URL`
-- [ ] Przetestować potwierdzenie na prawdziwym formularzu
+- [x] Potwierdzenie przetestowane na stronie online - działa
+- [ ] Wkleić nową wersję `potwierdzenie.gs` (limit dzienny) i wdrożyć jako nową wersję
 - [ ] Stopka i szablony w Gmailu (z `email/gmail.html`)
 - [x] GitHub Pages włączone: https://juliajzzalewska.github.io/Zalewski-Automotive/
 - [x] Web3Forms: Website URL zmieniony na adres GitHub Pages
