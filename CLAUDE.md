@@ -43,8 +43,9 @@ ewentualnie później własna domena z OVH.
 
 - [x] Klucz Web3Forms wklejony (konto web3forms na zalewski.automotive@gmail.com)
 - [x] Przetestować formularz (Web3Forms działa)
-- [ ] Wdrożyć `potwierdzenie.gs` w Google i wkleić adres do `CONFIRMATION_URL`
+- [x] `potwierdzenie.gs` wdrożony (projekt "Potwierdzenie formularza" na script.google.com), adres w `CONFIRMATION_URL`
+- [ ] Przetestować potwierdzenie na prawdziwym formularzu
 - [ ] Stopka i szablony w Gmailu (z `email/gmail.html`)
-- [ ] Włączyć GitHub Pages
+- [x] GitHub Pages włączone: https://juliajzzalewska.github.io/Zalewski-Automotive/
 - [ ] Po publikacji: w panelu Web3Forms zmienić Website URL z `localhost` na adres strony
 - [ ] (opcjonalnie) domena
