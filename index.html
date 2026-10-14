@@ -694,7 +694,9 @@
         }).catch(() => {});
       }
     } catch (err) {
-      errorEl.textContent = 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na zalewski.automotive@gmail.com.';
+      console.error('Web3Forms:', err);
+      errorEl.textContent = 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na zalewski.automotive@gmail.com.'
+        + (err && err.message ? ' (' + err.message + ')' : '');
       errorEl.style.display = 'block';
       btn.disabled = false; btn.style.opacity = '1';
       return;
