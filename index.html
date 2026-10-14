@@ -636,6 +636,9 @@
   });
 
   // ── FORM ──
+  // Adres skryptu Google (email/potwierdzenie.gs), który wysyła klientowi potwierdzenie
+  const CONFIRMATION_URL = 'WKLEJ_TUTAJ_ADRES_SKRYPTU_GOOGLE';
+
   async function submitForm(e) {
     e.preventDefault();
     const phone   = document.getElementById('contactPhone').value.trim();
@@ -681,6 +684,15 @@
       });
       const data = await res.json();
       if (!data.success) throw new Error(data.message);
+
+      // Potwierdzenie dla klienta - błąd tutaj nie blokuje wysłania zapytania
+      if (CONFIRMATION_URL.startsWith('https://')) {
+        fetch(CONFIRMATION_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: new URLSearchParams(new FormData(e.target))
+        }).catch(() => {});
+      }
     } catch (err) {
       errorEl.textContent = 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na zalewski.automotive@gmail.com.';
       errorEl.style.display = 'block';

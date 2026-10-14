@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Stopka i szablony Gmail</title>
+<style>
+  :root { --bg: #F4F1EC; --card: #fff; --ink: #10141C; --muted: #6A707C; --gold: #C9A84C; --line: #E2DDD3; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.6 Arial, Helvetica, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  h2 { font-size: 19px; margin: 40px 0 8px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .lead { color: var(--muted); margin: 0 0 8px; }
+  ol { padding-left: 20px; margin: 8px 0 16px; }
+  li { margin: 2px 0; }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 24px; overflow-x: auto; }
+  button { margin-top: 12px; background: var(--ink); color: #fff; border: 0; border-radius: 4px; padding: 10px 18px; font: 600 14px Arial, sans-serif; cursor: pointer; }
+  button.ok { background: #2E7D4F; }
+  code { background: #ECE7DD; padding: 1px 5px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Stopka i szablony do Gmaila</h1>
+  <p class="lead">Kliknij „Kopiuj” przy wybranym elemencie, a potem wklej go w Gmailu (Ctrl+V). Wygląd zostanie zachowany.</p>
+
+  <!-- ===================== STOPKA ===================== -->
+  <h2>1. Stopka (podpis)</h2>
+  <ol>
+    <li>Kliknij <b>Kopiuj stopkę</b> poniżej.</li>
+    <li>W Gmailu: koło zębate (prawy górny róg) → <b>Zobacz wszystkie ustawienia</b> → zakładka <b>Ogólne</b> → sekcja <b>Podpis</b>.</li>
+    <li><b>Utwórz nowy</b>, nazwij np. „Firmowy”, wklej (Ctrl+V) w pole podpisu.</li>
+    <li>Pod spodem w <b>Ustawieniach domyślnych podpisu</b> wybierz „Firmowy” dla nowych wiadomości <b>i</b> dla odpowiedzi.</li>
+    <li>Przewiń na sam dół i kliknij <b>Zapisz zmiany</b>.</li>
+  </ol>
+  <div class="box"><div id="podpis">
+<table cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;border-collapse:collapse;">
+  <tr>
+    <td style="padding:0 16px 0 0;vertical-align:middle;">
+      <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;"><tr>
+        <td style="width:52px;height:52px;background:#080A0F;border:1px solid #C9A84C;text-align:center;vertical-align:middle;font-family:'Arial Black',Arial,sans-serif;font-weight:900;font-size:20px;color:#C9A84C;">ZA</td>
+      </tr></table>
+    </td>
+    <td style="padding:0 0 0 16px;border-left:2px solid #C9A84C;vertical-align:middle;">
+      <div style="font-size:15px;font-weight:bold;color:#10141C;">Zespół Zalewski Automotive</div>
+      <div style="font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#C9A84C;padding-bottom:6px;">Import pojazdów z USA</div>
+      <div style="font-size:13px;color:#4A505C;line-height:1.6;">
+        tel. <a href="tel:+48505962630" style="color:#10141C;text-decoration:none;">505 962 630</a><br>
+        <a href="mailto:zalewski.automotive@gmail.com" style="color:#10141C;text-decoration:none;">zalewski.automotive@gmail.com</a>
+      </div>
+    </td>
+  </tr>
+</table>
+  </div></div>
+  <button data-copy="podpis">Kopiuj stopkę</button>
+
+  <!-- ===================== SZABLONY ===================== -->
+  <h2>2. Szablony odpowiedzi</h2>
+  <p>Jednorazowo włącz szablony w Gmailu: koło zębate → <b>Zobacz wszystkie ustawienia</b> → zakładka <b>Zaawansowane</b> → <b>Szablony: Włącz</b> → <b>Zapisz zmiany</b> na dole.</p>
+  <p>Potem, dla każdego szablonu poniżej:</p>
+  <ol>
+    <li>Kliknij <b>Kopiuj</b> przy szablonie.</li>
+    <li>W Gmailu kliknij <b>Utwórz</b> (nowa wiadomość) i wklej treść (Ctrl+V). Stopka doda się sama pod spodem, nie kopiuj jej drugi raz.</li>
+    <li>W nowej wiadomości: trzy kropki (prawy dolny róg) → <b>Szablony</b> → <b>Zapisz wersję roboczą jako szablon</b> → <b>Zapisz jako nowy szablon</b>, nadaj nazwę (podaną przy szablonie).</li>
+  </ol>
+  <p>Użycie: odpowiadasz klientowi → trzy kropki → <b>Szablony</b> → wybierasz szablon → uzupełniasz miejsca w <code>[nawiasach]</code>.</p>
+
+  <h3>Szablon „Prośba o szczegóły”</h3>
+  <div class="box"><div id="s1">
+<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.7;color:#10141C;">
+  <p style="margin:0 0 14px;">Dzień dobry, [imię],</p>
+  <p style="margin:0 0 14px;">dziękujemy za zainteresowanie importem auta z USA. Żeby przygotować dla Pana/Pani konkretne propozycje, potrzebujemy jeszcze kilku informacji:</p>
+  <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:0 0 14px;">
+    <tr><td style="padding:4px 10px 4px 0;color:#C9A84C;font-weight:bold;vertical-align:top;">•</td><td style="padding:4px 0;">marka i model (lub kilka, które Pan/Pani rozważa),</td></tr>
+    <tr><td style="padding:4px 10px 4px 0;color:#C9A84C;font-weight:bold;vertical-align:top;">•</td><td style="padding:4px 0;">rocznik i maksymalny przebieg,</td></tr>
+    <tr><td style="padding:4px 10px 4px 0;color:#C9A84C;font-weight:bold;vertical-align:top;">•</td><td style="padding:4px 0;">łączny budżet (z transportem, cłem i opłatami),</td></tr>
+    <tr><td style="padding:4px 10px 4px 0;color:#C9A84C;font-weight:bold;vertical-align:top;">•</td><td style="padding:4px 0;">czy dopuszcza Pan/Pani auta z drobnymi uszkodzeniami.</td></tr>
+  </table>
+  <p style="margin:0 0 14px;">Chętnie też porozmawiamy telefonicznie - proszę dać znać, kiedy będzie wygodnie.</p>
+  <p style="margin:0;">Pozdrawiamy serdecznie</p>
+</div>
+  </div></div>
+  <button data-copy="s1">Kopiuj szablon</button>
+
+  <h3>Szablon „Wstępna wycena”</h3>
+  <div class="box"><div id="s2">
+<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.7;color:#10141C;">
+  <p style="margin:0 0 14px;">Dzień dobry, [imię],</p>
+  <p style="margin:0 0 14px;">dziękujemy za cierpliwość. Poniżej wstępny szacunek kosztów importu dla <b>[marka, model, rocznik]</b>:</p>
+  <table cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:0 0 16px;min-width:340px;border-left:3px solid #C9A84C;">
+    <tr><td style="padding:7px 24px 7px 14px;border-bottom:1px solid #E2DDD3;">Cena auta (licytacja)</td><td style="padding:7px 14px 7px 0;border-bottom:1px solid #E2DDD3;text-align:right;">[kwota] PLN</td></tr>
+    <tr><td style="padding:7px 24px 7px 14px;border-bottom:1px solid #E2DDD3;">Transport do Polski</td><td style="padding:7px 14px 7px 0;border-bottom:1px solid #E2DDD3;text-align:right;">[kwota] PLN</td></tr>
+    <tr><td style="padding:7px 24px 7px 14px;border-bottom:1px solid #E2DDD3;">Cło, akcyza, VAT</td><td style="padding:7px 14px 7px 0;border-bottom:1px solid #E2DDD3;text-align:right;">[kwota] PLN</td></tr>
+    <tr><td style="padding:7px 24px 7px 14px;border-bottom:1px solid #E2DDD3;">Nasza obsługa</td><td style="padding:7px 14px 7px 0;border-bottom:1px solid #E2DDD3;text-align:right;">[kwota] PLN</td></tr>
+    <tr><td style="padding:9px 24px 9px 14px;background:#10141C;color:#C9A84C;font-weight:bold;">Razem (szacunkowo)</td><td style="padding:9px 14px 9px 0;background:#10141C;color:#C9A84C;font-weight:bold;text-align:right;">[kwota] PLN</td></tr>
+  </table>
+  <p style="margin:0 0 14px;">To wycena orientacyjna - ostateczna kwota zależy od wyniku licytacji i kursu dolara. Jeśli propozycja Panu/Pani odpowiada, przygotujemy listę konkretnych egzemplarzy.</p>
+  <p style="margin:0;">Pozdrawiamy serdecznie</p>
+</div>
+  </div></div>
+  <button data-copy="s2">Kopiuj szablon</button>
+
+  <h3>Szablon „Przypomnienie”</h3>
+  <div class="box"><div id="s3">
+<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.7;color:#10141C;">
+  <p style="margin:0 0 14px;">Dzień dobry, [imię],</p>
+  <p style="margin:0 0 14px;">wracamy do naszej rozmowy o imporcie <b>[model]</b>. Czy przesłana propozycja jest nadal aktualna dla Pana/Pani? Na aukcjach co tydzień pojawiają się nowe egzemplarze, więc chętnie przygotujemy świeże zestawienie.</p>
+  <p style="margin:0 0 14px;">W razie pytań jesteśmy do dyspozycji mailowo i telefonicznie.</p>
+  <p style="margin:0;">Pozdrawiamy serdecznie</p>
+</div>
+  </div></div>
+  <button data-copy="s3">Kopiuj szablon</button>
+</main>
+
+<script>
+  document.querySelectorAll('button[data-copy]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const el = document.getElementById(btn.dataset.copy);
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      const ok = document.execCommand('copy');
+      sel.removeAllRanges();
+      const label = btn.textContent;
+      btn.textContent = ok ? 'Skopiowano ✓ - wklej w Gmailu' : 'Zaznacz ręcznie i skopiuj (Ctrl+C)';
+      btn.classList.toggle('ok', ok);
+      setTimeout(() => { btn.textContent = label; btn.classList.remove('ok'); }, 3000);
+    });
+  });
+</script>
+</body>
+</html>
